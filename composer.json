@@ -12,6 +12,5 @@
           "DevDojo\\App\\": "/src"
         }
     },
-    "minimum-stability": "dev",
     "require": {}
 }
