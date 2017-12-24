@@ -18,7 +18,6 @@ class DynamicConfigs
         $config_map = array(
             'site.title' => 'app.name',
             'site.url' => 'app.url',
-            'site.debug' => 'app.debug',
 
             'mail.driver' => 'mail.driver',
             'mail.host' => 'mail.host',
@@ -34,6 +33,13 @@ class DynamicConfigs
             if(setting($key)){
                 config([$config => setting($key)]);
             }
+        }
+
+        // specific for Debug setting
+        if(setting('site.debug')){
+            config(['app.debug' => true]);
+        } else {
+            config(['app.debug' => false]);
         }
         
         return $next($request);
