@@ -1,0 +1,12 @@
+{
+    "name": "devdojo/app",
+    "description": "This is the devdojo products app package",
+    "authors": [
+        {
+            "name": "Tony Lea",
+            "email": "tnylea@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
