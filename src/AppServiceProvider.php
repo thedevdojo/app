@@ -1,6 +1,6 @@
 <?php
 
-namespace Devdojo\App;
+namespace DevDojo\App;
 
 use Illuminate\Support\ServiceProvider;
 
