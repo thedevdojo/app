@@ -16,7 +16,7 @@ class DynamicConfigs
      */
     public function handle($request, Closure $next)
     {
-        if(Schema::hasTable('settings')){
+        if(env('DB_DATABASE') && Schema::hasTable('settings')){
             $config_map = array(
                 'site.title' => 'app.name',
                 'site.url' => 'app.url',
