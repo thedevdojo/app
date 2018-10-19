@@ -21,7 +21,7 @@ class DemoThemeSwitcher
                 if(isset($request->theme) && $request->is('/')){
                     $theme = \VoyagerThemes\Models\Theme::where('folder', '=', $request->theme)->first();
                     if(isset($theme->id)){
-                        return redirect('/')->withCookie('voyager_theme', $request->theme);
+                        return redirect('/?' . uniqid())->withCookie('voyager_theme', $request->theme);
                     }
                 }
             }
