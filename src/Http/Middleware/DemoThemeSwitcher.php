@@ -19,7 +19,7 @@ class DemoThemeSwitcher
         if(env('DB_DATABASE') && Schema::hasTable('settings')){
             if(setting('site.demo_mode', 0) || env('DEMO_MODE')){
                 if(isset($request->theme) && $request->is('/')){
-                    $theme = \VoyagerThemes\Models\Theme::where('folder', '=', $request->theme)->first();
+                    $theme = \DB::table('themes')->where('folder', '=', $request->theme)->first();
                     if(isset($theme->id)){
                         return redirect('/?' . uniqid())->withCookie('voyager_theme', $request->theme);
                     }
